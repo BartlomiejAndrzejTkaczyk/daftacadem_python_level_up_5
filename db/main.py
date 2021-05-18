@@ -13,8 +13,9 @@ async def root(db: Session = Depends(get_db)):
     blog = db.query(models.Shipper).all()
     return blog
 
+
 @app.get("/suppliers")
-async def suppliers(db : Session = Depends(get_db)):
+async def suppliers(db: Session = Depends(get_db)):
     return crud.get_suppliers(db)
 
 
